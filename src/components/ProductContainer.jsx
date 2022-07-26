@@ -36,7 +36,6 @@ export default function ProductContainer({ cards }) {
                                         </Typography>
                                         <Box align="left" mb={1} borderColor="transparent">
                                             <Rating
-                                                // value={4}
                                                 value={card.rating.rate}
                                                 name="rating"
                                             // readOnly="true"

@@ -23,7 +23,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    fetch(url+"/categories")
+    fetch(url + "/categories")
       .then((r) => r.json())
       .then((data) => SetCategories(data));
   }, []);
@@ -35,7 +35,10 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartContainer />} />
-        <Route path="/" element={<Home products={products} categories = {categories} />} />
+        <Route
+          path="/"
+          element={<Home products={products} categories={categories} />}
+        />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
