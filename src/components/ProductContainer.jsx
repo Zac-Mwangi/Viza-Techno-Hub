@@ -4,6 +4,10 @@ import useStyles from '../styles'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from "@mui/material/IconButton";
 
+// import Rating from '@material-ui/lab/Rating';
+import Box from '@material-ui/core/Box';
+import { Rating } from '@mui/material';
+
 
 export default function ProductContainer({ cards }) {
     const classes = useStyles()
@@ -27,6 +31,13 @@ export default function ProductContainer({ cards }) {
                                         <Typography gutterBottom variant='p' className={classes.multiLineEllipsis}>
                                             {card.description}
                                         </Typography>
+                                        <Box align="left" mb={1} borderColor="transparent">
+                                            <Rating
+                                                value={card.rating.rate}
+                                                name="rating"
+                                                readOnly="true"
+                                            />
+                                        </Box>
                                         <Typography variant='h6'>
                                             ${card.price} /=
                                         </Typography>
