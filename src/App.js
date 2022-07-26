@@ -12,6 +12,7 @@ import Home from "./components/Home";
 
 export default function App() {
   const [products, setProducts] = useState([]);
+  const [categories, SetCategories] = useState([]);
   const url = "https://fakestoreapi.com/products";
 
   // useEffect To Fetch All the products
@@ -21,6 +22,12 @@ export default function App() {
       .then((data) => setProducts(data));
   }, []);
 
+  useEffect(() => {
+    fetch(url+"/categories")
+      .then((r) => r.json())
+      .then((data) => SetCategories(data));
+  }, []);
+
   return (
     <div>
       <NavBar />
@@ -28,7 +35,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartContainer />} />
-        <Route path="/" element={<Home products={products} />} />
+        <Route path="/" element={<Home products={products} categories = {categories} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

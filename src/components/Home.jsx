@@ -2,21 +2,14 @@ import React from 'react'
 import Header from './Header'
 import ProductContainer from './ProductContainer'
 
-export default function Home({ products }) {
+export default function Home({ products, categories }) {
     // loop through the products
-    // const productList = products.map((product) => (
-    //     <ProductContainer
-    //         key={product.id}
-    //         title={product.title}
-    //         image={product.image}
-    //     />
-    // ));
-
     return (
         <div>
-            <Header />
+            {/* <Header category = {products.category}/> */}
             {/* {productList} */}
-            <ProductContainer cards = {products}/>
+            <Header categories={categories} />
+            <ProductContainer cards={products} />
         </div >
     )
 }

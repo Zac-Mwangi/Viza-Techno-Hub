@@ -4,10 +4,8 @@ import { Typography, Button, Grid, Container } from '@mui/material'
 
 
 
-export default function Header() {
-
+export default function Header({ categories }) {
     const classes = useStyles()
-
     return (
         <div>
             <div className={classes.container}>
@@ -34,12 +32,12 @@ export default function Header() {
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' color='primary'>
-                                    ELECTRONICS
+                                    CLOTHING
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    CLOTHING
+                                    LIQUOR
                                 </Button>
                             </Grid>
                             <Grid item>
@@ -49,17 +47,7 @@ export default function Header() {
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    GAMINGS
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant='contained' color='primary'>
-                                    FOOD
-                                </Button>
-                            </Grid>
-                            <Grid item>
-                                <Button variant='outlined' color='primary'>
-                                    LIQUOR
+                                    HOUSING
                                 </Button>
                             </Grid>
                         </Grid>

@@ -12,7 +12,7 @@ export default function NavBar() {
         <div>
             <CssBaseline />
             <AppBar position='static'>
-                <Toolbar style={{ margin: "6px" }}>
+                <Toolbar style={{ margin: "5px" }}>
                     <IconButton size='large' edge='start' color='inherit' aria-label='logo'>
                         <LaptopMacIcon />
                     </IconButton>

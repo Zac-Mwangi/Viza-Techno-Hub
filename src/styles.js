@@ -18,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
     display: "flex",
     flexDirection: "column",
+
+    maxWidth: 310,
+    transition: "transform 0.15s ease-in-out",
+    "&:hover": { transform: "scale3d(1.05, 1.05, 1)"}
   },
   cardMedia: {
     paddingTop: "56.25%",
@@ -45,6 +49,16 @@ const useStyles = makeStyles((theme) => ({
     "-webkit-line-clamp": 1,
     "-webkit-box-orient": "vertical",
   },
+
+
+  // HOVER EFFECT START
+  root: {
+    maxWidth: 310,
+    transition: "transform 0.15s ease-in-out"
+  },
+  cardHovered: {
+    transform: "scale3d(1.05, 1.05, 1)"
+  }
 }));
 
 export default useStyles;
