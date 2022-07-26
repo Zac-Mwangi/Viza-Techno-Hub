@@ -29,27 +29,37 @@ export default function Header() {
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    <Typography>HP</Typography>
+                                    LAPTOPS
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' color='primary'>
-                                    DELL
+                                    ELECTRONICS
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    LENOVO
+                                    CLOTHING
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='contained' color='primary'>
-                                    ACCESSORIES
+                                    JEWELLERS
                                 </Button>
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    OTHERS
+                                    GAMINGS
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant='contained' color='primary'>
+                                    FOOD
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant='outlined' color='primary'>
+                                    LIQUOR
                                 </Button>
                             </Grid>
                         </Grid>
