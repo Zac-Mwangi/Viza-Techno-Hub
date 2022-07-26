@@ -3,6 +3,8 @@ import { Typography, AppBar, Button, CssBaseline, Toolbar, Stack, Badge } from '
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from "@mui/material/IconButton";
+import { NavLink } from 'react-router-dom'
+
 
 
 export default function NavBar() {
@@ -10,7 +12,7 @@ export default function NavBar() {
         <div>
             <CssBaseline />
             <AppBar position='static'>
-                <Toolbar>
+                <Toolbar style={{ margin: "6px" }}>
                     <IconButton size='large' edge='start' color='inherit' aria-label='logo'>
                         <LaptopMacIcon />
                     </IconButton>
@@ -18,17 +20,22 @@ export default function NavBar() {
                         {/* TRACEY LAPTOP */}
                     </Typography>
                     <Stack direction='row' spacing={2}>
-                        <Button color='inherit'>Home</Button>
-                        <Button color='inherit'>Contact</Button>
-                        <Button color='inherit'>Login</Button>
+                        <Button color='inherit'>
+                            <NavLink to='/'>Home</NavLink>
+                        </Button>
+                        <Button color='inherit'>
+                            <NavLink to='/contact'>Contact</NavLink>
+                        </Button>
+                        <Button color='inherit'>
+                            <NavLink to='/login'>Login</NavLink>
+                        </Button>
                         <Badge badgeContent={2} color="secondary">
                             <IconButton color="inherit" aria-label="add to shopping cart">
-                                <AddShoppingCartIcon />
+                                <NavLink to='/cart'> <AddShoppingCartIcon /></NavLink>
                             </IconButton>
                         </Badge>
                     </Stack>
                 </Toolbar>
-
             </AppBar>
         </div>
     )

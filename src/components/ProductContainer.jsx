@@ -14,8 +14,7 @@ export default function ProductContainer() {
                 <Grid container spacing={4}>
                     {cards.map((card) => (
                         <Grid item key={card} xs={12} sm={6} md={4}>
-                            <Card className={classes.card} onClick={() => alert(card + "Clicked")}>
-
+                            <Card className={classes.card} onClick={() => console.log(card + "Clicked")}>
                                 <CardMedia
                                     className={classes.cardMedia}
                                     image="https://www.bovic.co.ke/wp-content/uploads/2021/04/Dell-XPS-13-7390.jpg"
