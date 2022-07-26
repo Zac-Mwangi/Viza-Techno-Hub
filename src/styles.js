@@ -38,6 +38,13 @@ const useStyles = makeStyles((theme) => ({
     "-webkit-line-clamp": 2,
     "-webkit-box-orient": "vertical",
   },
+  multiLineEllipsis2: {
+    overflow: "hidden",
+    textOverflow: "ellipsis",
+    display: "-webkit-box",
+    "-webkit-line-clamp": 1,
+    "-webkit-box-orient": "vertical",
+  },
 }));
 
 export default useStyles;

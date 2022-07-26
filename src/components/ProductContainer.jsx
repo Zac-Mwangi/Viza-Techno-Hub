@@ -4,9 +4,8 @@ import useStyles from '../styles'
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from "@mui/material/IconButton";
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-export default function ProductContainer() {
+export default function ProductContainer({ cards }) {
     const classes = useStyles()
     return (
         <div>
@@ -14,22 +13,22 @@ export default function ProductContainer() {
                 <Grid container spacing={4}>
                     {cards.map((card) => (
                         <Grid item key={card} xs={12} sm={6} md={4}>
-                            <Card className={classes.card} onClick={() => console.log(card + "Clicked")}>
+                            <Card className={classes.card} onClick={() => console.log("Clicked")}>
                                 <CardMedia
                                     className={classes.cardMedia}
-                                    image="https://www.bovic.co.ke/wp-content/uploads/2021/04/Dell-XPS-13-7390.jpg"
-                                    title="Dell XPS" />
+                                    image={card.image}
+                                    title={card.title} />
 
                                 <div style={{ backgroundColor: "#FFF" }}>
                                     <CardContent className={classes.cardContent}>
-                                        <Typography gutterBottom variant='h5'>
-                                            Dell XPS 13
+                                        <Typography gutterBottom variant='h5' className={classes.multiLineEllipsis2}>
+                                            {card.title}
                                         </Typography>
                                         <Typography gutterBottom variant='p' className={classes.multiLineEllipsis}>
-                                            Features up to 11th Gen Intel processors and 4K display, perfectly caters to your home computing and entertainment needs.Features up to 11th Gen Intel processors and 4K display, perfectly caters to your home computing and entertainment needs.
+                                            {card.description}
                                         </Typography>
                                         <Typography variant='h6'>
-                                            Ksh 25000/=
+                                            ${card.price} /=
                                         </Typography>
                                     </CardContent>
                                     <CardActions>
