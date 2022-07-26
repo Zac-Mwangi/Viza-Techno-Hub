@@ -29,7 +29,7 @@ export default function Header() {
                             </Grid>
                             <Grid item>
                                 <Button variant='outlined' color='primary'>
-                                    HP
+                                    <Typography>HP</Typography>
                                 </Button>
                             </Grid>
                             <Grid item>

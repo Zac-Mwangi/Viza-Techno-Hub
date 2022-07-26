@@ -11,7 +11,8 @@ export default function Footer() {
                 Footer
             </Typography>
             <Typography variant='subtitle1' align='center' color='textSecondary'>
-                Something here to give the footer a purpose</Typography>
+                Something here to give the footer a purpose
+            </Typography>
         </footer>
     )
 }
