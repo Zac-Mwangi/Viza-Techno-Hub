@@ -9,6 +9,11 @@ import { Rating } from '@mui/material';
 
 export default function ProductContainer({ cards }) {
     const classes = useStyles()
+    function handleSubmit(e, id) {
+        e.stopPropagation(); // notice this
+        console.log(id + " card click");
+    }
+
     return (
         <div>
             <Container styles={{ padding: "20px 0" }} className={classes.cardGridS} maxWidth="md">
@@ -34,14 +39,15 @@ export default function ProductContainer({ cards }) {
                                                 // value={4}
                                                 value={card.rating.rate}
                                                 name="rating"
-                                                // readOnly="true"
+                                            // readOnly="true"
                                             />
                                         </Box>
                                         <div style={{ display: "flex" }}>
                                             <Typography variant='h6' sx={{ flexGrow: 1 }}>
                                                 ${card.price}
                                             </Typography>
-                                            <IconButton color="primary" aria-label="add to shopping cart">
+                                            <IconButton color="primary" aria-label="add to shopping cart"
+                                                onClick={(e) => handleSubmit(e, card.id)}>
                                                 <AddShoppingCartIcon />
                                             </IconButton>
                                         </div>

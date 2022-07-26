@@ -50,6 +50,16 @@ export default function Header({ categories }) {
                                     HOUSING
                                 </Button>
                             </Grid>
+                            <Grid item>
+                                <Button variant='contained' color='primary'>
+                                    ELECTRONICS
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant='outlined' color='primary'>
+                                    OTHERS
+                                </Button>
+                            </Grid>
                         </Grid>
                     </div>
                 </Container>
