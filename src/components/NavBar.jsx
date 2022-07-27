@@ -5,24 +5,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from "@mui/material/IconButton";
 import { NavLink } from 'react-router-dom'
 
-export default function NavBar({ setCartLength, cartLength }) {
-
-    const [cart, setCart] = useState([]);
-
-    // load the cart data
-
-    const url = "http://localhost:3000/cart";
-
-    // useEffect To Fetch All the products
-    useEffect(() => {
-        fetch(url)
-            .then((r) => r.json())
-            .then((data) => {
-                // console.log(data)
-                setCart(data)
-                setCartLength(data.length)
-            });
-    }, []);
+export default function NavBar({ cartLength }) {
 
     return (
         <div>

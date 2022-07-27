@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -12,27 +12,35 @@ import Home from "./components/Home";
 
 export default function App() {
   const [cartLength, setCartLength] = useState(0);
+  const [cart, setCart] = useState([]);
+
+  const url = "http://localhost:3000/cart";
+
+  // useEffect To Fetch All the cart
+  useEffect(() => {
+    fetch(url)
+      .then((r) => r.json())
+      .then((data) => {
+        setCart(data);
+        setCartLength(data.length);
+      });
+  }, []);
 
   function update() {
     setCartLength((cartLength) => cartLength + 1);
   }
+
   return (
     <div>
-      <NavBar setCartLength={setCartLength} cartLength={cartLength} />
+      <NavBar cartLength={cartLength} />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<CartContainer />} />
-        <Route
-          path="/"
-          element={<Home update={update} />}
-          // element={<Home products={products} updateList={updateList} />}
-        />
+        <Route path="/cart" element={<CartContainer cart={cart}/>} />
+        <Route path="/" element={<Home update={update} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />
-
-      {/* <CartContainer /> */}
     </div>
   );
 }
