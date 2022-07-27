@@ -1,13 +1,29 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import { Typography, AppBar, Button, CssBaseline, Toolbar, Stack, Badge } from '@mui/material'
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from "@mui/material/IconButton";
 import { NavLink } from 'react-router-dom'
 
+export default function NavBar({ setCartLength, cartLength }) {
 
+    const [cart, setCart] = useState([]);
 
-export default function NavBar() {
+    // load the cart data
+
+    const url = "http://localhost:3000/cart";
+
+    // useEffect To Fetch All the products
+    useEffect(() => {
+        fetch(url)
+            .then((r) => r.json())
+            .then((data) => {
+                console.log(data)
+                setCart(data)
+                setCartLength(data.length)
+            });
+    }, []);
+
     return (
         <div>
             <CssBaseline />
@@ -17,7 +33,6 @@ export default function NavBar() {
                         <LaptopMacIcon />
                     </IconButton>
                     <Typography variant='h6' component='div' sx={{ flexGrow: 1 }}>
-                        {/* TRACEY LAPTOP */}
                     </Typography>
                     <Stack direction='row' spacing={2}>
                         <Button color='inherit'>
@@ -29,7 +44,7 @@ export default function NavBar() {
                         <Button color='inherit'>
                             <NavLink to='/login'>Login</NavLink>
                         </Button>
-                        <Badge badgeContent={2} color="secondary">
+                        <Badge badgeContent={cartLength} color="secondary">
                             <IconButton color="inherit" aria-label="add to shopping cart">
                                 <NavLink to='/cart'> <AddShoppingCartIcon /></NavLink>
                             </IconButton>

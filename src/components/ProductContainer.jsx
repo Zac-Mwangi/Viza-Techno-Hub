@@ -7,11 +7,37 @@ import Box from '@material-ui/core/Box';
 import { Rating } from '@mui/material';
 
 
-export default function ProductContainer({ cards }) {
+export default function ProductContainer({ cards, update }) {
     const classes = useStyles()
-    function handleSubmit(e, id) {
+
+    const url = "http://localhost:3000/cart";
+
+
+    function handleSubmit(e, id, card) {
         e.stopPropagation(); // notice this
-        console.log(id + " card click");
+        // console.log(card);
+
+        const newCart = {
+            "title": card.title,
+            "price": card.price,
+            "description": card.description,
+            "category": card.category,
+            "image": card.image,
+            "quantity": card.quantity,
+        };
+
+        fetch(url, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(newCart),
+        })
+            .then((r) => r.json())
+            .then((data) => {
+                console.log(data);
+                update()
+            });
     }
 
     return (
@@ -46,7 +72,7 @@ export default function ProductContainer({ cards }) {
                                                 ${card.price}
                                             </Typography>
                                             <IconButton color="primary" aria-label="add to shopping cart"
-                                                onClick={(e) => handleSubmit(e, card.id)}>
+                                                onClick={(e) => handleSubmit(e, card.id, card)}>
                                                 <AddShoppingCartIcon />
                                             </IconButton>
                                         </div>

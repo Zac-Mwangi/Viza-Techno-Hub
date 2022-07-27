@@ -14,5 +14,7 @@ export default function Footer() {
                 Something here to give the footer a purpose
             </Typography>
         </footer>
+
+        
     )
 }
