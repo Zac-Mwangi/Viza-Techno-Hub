@@ -3,28 +3,25 @@ import useStyles from '../styles'
 import { Typography, Button, Grid, Container } from '@mui/material'
 
 
-export default function Header({ products, updateList, setProducts }) {
+export default function Header({ products, updateList, setProducts, nM , setNM }) {
     const classes = useStyles()
 
     const [t, sT] = useState([])
 
     function changeText(filterBy) {
-        const pp = (products.filter((product) => {
+        const pp = (nM.filter((product) => {
             if (filterBy === "all") {
                 return true;
             } else {
                 return product.category === filterBy;
             }
         }));
-        // 
 
-
-        pp.length > 0 ? setProducts(pp) : setProducts(pp)
+        setProducts(pp)
         console.log(pp);
-        // setProducts(pp)
-        // console.log(filterBy)
+        // setNM(products)
 
-        setProducts(products => pp)
+        // setProducts(products => pp)
 
     }
 

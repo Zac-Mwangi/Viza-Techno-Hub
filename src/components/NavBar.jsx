@@ -18,7 +18,7 @@ export default function NavBar({ setCartLength, cartLength }) {
         fetch(url)
             .then((r) => r.json())
             .then((data) => {
-                console.log(data)
+                // console.log(data)
                 setCart(data)
                 setCartLength(data.length)
             });
