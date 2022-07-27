@@ -9,7 +9,7 @@ import SearchBar from 'material-ui-search-bar';
 export default function Header({ products, updateList, setProducts, nM, setNM }) {
     const classes = useStyles()
 
-    const [t, sT] = useState([])
+    const [search, setSearch] = useState([])
 
     function changeText(filterBy) {
         const pp = (nM.filter((product) => {
@@ -22,6 +22,10 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
         setProducts(pp)
     }
 
+    function searchFunction(searchValue) {
+        const itemsSearch =  nM.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+        setProducts(itemsSearch)
+    }
     return (
         <div>
             <div className={classes.container}>
@@ -77,10 +81,10 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 </Button>
                             </Grid>
                         </Grid>
-                        <div style={{ marginTop: "20px" } }>
-                            <SearchBar
+                        <div style={{ marginTop: "20px" }}>
+                            <SearchBar onChange={(value) => searchFunction(value)}
                                 placeholder="Search Product ..."
-                            />
+                            ></SearchBar>
                         </div>
 
                     </div>
