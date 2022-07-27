@@ -37,7 +37,7 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/cart" element={<CartContainer cart={cart}/>} />
-        <Route path="/" element={<Home update={update} />} />
+        <Route path="/" element={<Home update={update} cart = {cart} />} />
         <Route path="*" element={<Error />} />
       </Routes>
       <Footer />

@@ -3,7 +3,7 @@ import Contact from './Contact'
 import Header from './Header'
 import ProductContainer from './ProductContainer'
 
-export default function Home({ update }) {
+export default function Home({ update , cart }) {
     const [products, setProducts] = useState([]);
     const [nM, setNM] = useState([]);
     const url = "http://localhost:3000/products";
@@ -26,7 +26,7 @@ export default function Home({ update }) {
     return (
         <div>
             <Header products={products} updateList={updateList} setProducts={setProducts} nM={nM} setNM={setNM} />
-            <ProductContainer cards={products} update={update} />
+            <ProductContainer cards={products} update={update} cart = {cart} />
             <Contact />
         </div >
     )

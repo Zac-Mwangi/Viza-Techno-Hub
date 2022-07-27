@@ -7,17 +7,18 @@ import Box from '@material-ui/core/Box';
 import { Rating } from '@mui/material';
 
 
-export default function ProductContainer({ cards, update }) {
+export default function ProductContainer({ cards, update, cart }) {
     const classes = useStyles()
+
+    // console.log("productContainer", cart)
 
     const url = "http://localhost:3000/cart";
 
-
     function handleSubmit(e, id, card) {
-        e.stopPropagation(); // notice this
-        // console.log(card);
+        e.stopPropagation();
 
         const newCart = {
+            "product_id": card.id,
             "title": card.title,
             "price": card.price,
             "description": card.description,
@@ -39,7 +40,6 @@ export default function ProductContainer({ cards, update }) {
                 update()
             });
     }
-
     return (
         <div>
             <Container styles={{ padding: "20px 0" }} className={classes.cardGridS} maxWidth="md">
