@@ -14,8 +14,26 @@ export default function ProductContainer({ cards, update, cart }) {
 
     const url = "http://localhost:3000/cart";
 
-    function handleSubmit(e, id, card) {
+
+    let t = true
+    function handleSubmit(e, card) {
         e.stopPropagation();
+
+
+        for (let i = 0; i < cart.length; i++) {
+            if (cart[i].product_id === card.id) {
+                t = false
+                console.log("first :" + t)
+                break
+            }
+
+        }
+
+        console.log(t)
+
+        // if(!t){
+        //     return false
+        // }
 
         const newCart = {
             "product_id": card.id,
@@ -27,18 +45,20 @@ export default function ProductContainer({ cards, update, cart }) {
             "quantity": card.quantity,
         };
 
-        fetch(url, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(newCart),
-        })
-            .then((r) => r.json())
-            .then((data) => {
-                // console.log(data);
-                update()
-            });
+        if (t) {
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newCart),
+            })
+                .then((r) => r.json())
+                .then((data) => {
+                    update()
+                });
+        }
+
     }
     return (
         <div>
@@ -50,7 +70,7 @@ export default function ProductContainer({ cards, update, cart }) {
                                 <CardMedia
                                     className={classes.cardMedia}
                                     image={card.image}
-                                    title={card.title} />
+                                    title={card.description} />
 
                                 <div style={{ backgroundColor: "#FFF" }}>
                                     <CardContent className={classes.cardContent}>
@@ -72,7 +92,7 @@ export default function ProductContainer({ cards, update, cart }) {
                                                 ${card.price}
                                             </Typography>
                                             <IconButton color="primary" aria-label="add to shopping cart"
-                                                onClick={(e) => handleSubmit(e, card.id, card)}>
+                                                onClick={(e) => handleSubmit(e, card)}>
                                                 <AddShoppingCartIcon />
                                             </IconButton>
                                         </div>

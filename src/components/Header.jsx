@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import useStyles from '../styles'
-import { Typography, Button, Grid, Container } from '@mui/material'
+import { Typography, Button, Grid, Container, Box, TextField } from '@mui/material'
+
+import SearchBar from 'material-ui-search-bar';
+
 
 
 export default function Header({ products, updateList, setProducts, nM, setNM }) {
@@ -74,9 +77,20 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 </Button>
                             </Grid>
                         </Grid>
+                        <div style={{ marginTop: "20px" } }>
+                            <SearchBar
+                                placeholder="Search Product ..."
+                            />
+                        </div>
+
                     </div>
+
+
                 </Container>
             </div>
+
+
+
         </div>
     )
 }
