@@ -3,7 +3,7 @@ import useStyles from '../styles'
 import { Typography, Button, Grid, Container } from '@mui/material'
 
 
-export default function Header({ products, updateList, setProducts, nM , setNM }) {
+export default function Header({ products, updateList, setProducts, nM, setNM }) {
     const classes = useStyles()
 
     const [t, sT] = useState([])
@@ -16,13 +16,7 @@ export default function Header({ products, updateList, setProducts, nM , setNM }
                 return product.category === filterBy;
             }
         }));
-
         setProducts(pp)
-        console.log(pp);
-        // setNM(products)
-
-        // setProducts(products => pp)
-
     }
 
     return (
