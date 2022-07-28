@@ -8,14 +8,11 @@ import { Rating } from '@mui/material';
 
 
 export default function ProductContainer({ cards, update, cart }) {
+
     const classes = useStyles()
-
-    // console.log("productContainer", cart)
-
     const url = "https://vizahub.herokuapp.com/cart";
-
-
     let t = true
+    
     function handleSubmit(e, card) {
         e.stopPropagation();
 
@@ -77,7 +74,7 @@ export default function ProductContainer({ cards, update, cart }) {
                                         <Typography gutterBottom variant='h5' className={classes.multiLineEllipsis2}>
                                             {card.title}
                                         </Typography>
-                                        <Typography gutterBottom variant='p' className={classes.multiLineEllipsis}>
+                                        <Typography gutterBottom variant='h6' className={classes.multiLineEllipsis}>
                                             {card.description}
                                         </Typography>
                                         <Box align="left" mb={1} borderColor="transparent">

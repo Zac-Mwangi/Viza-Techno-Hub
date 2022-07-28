@@ -4,6 +4,7 @@ import Header from './Header'
 import ProductContainer from './ProductContainer'
 
 export default function Home({ update, cart }) {
+    
     const [products, setProducts] = useState([]);
     const [nM, setNM] = useState([]);
     const url = "https://vizahub.herokuapp.com/products";

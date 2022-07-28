@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { FormControl, InputLabel, Input, Button, Typography } from "@material-ui/core";
 import SendIcon from '@mui/icons-material/Send';
-
-
 import { Card, CardContent, Grid, Container } from '@mui/material'
 import useStyles from '../styles'
-
 import DeleteIcon from '@mui/icons-material/Delete';
-
-
-
+import EditIcon from '@mui/icons-material/Edit';
 
 export default function Contact() {
 
@@ -20,7 +15,9 @@ export default function Contact() {
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")
   const [message, setMessage] = useState("")
+  const [id, setID] = useState(1)
 
+  const [editBtn, setEditBtn] = useState(false)
 
   // useEffect To Fetch All the comments
   useEffect(() => {
@@ -35,34 +32,57 @@ export default function Contact() {
 
   function handleSubmit(e) {
     e.preventDefault()
-
     if (name === "" || email === "" || message === "") {
       alert("Please fill all the fields")
     }
     else {
+
       const commentData = {
         name,
         email,
         message,
       };
 
-      fetch(url, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(commentData),
-      })
-        .then((r) => r.json())
-        .then((data) => {
-          // console.log(data)
-          setComments([...comments, data])
-          setName("")
-          setEmail("")
-          setMessage("")
-        });
+      // check if its edit or add
+      if (editBtn) {
+        fetch(url + "/" + id, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(commentData),
+        })
+          .then((r) => r.json())
+          .then((updatedItem) => console.log(updatedItem));
+      }
+      else {
+        fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(commentData),
+        })
+          .then((r) => r.json())
+          .then((data) => {
+            // console.log(data)
+            setComments([...comments, data])
+            setName("")
+            setEmail("")
+            setMessage("")
+          });
+      }
     }
 
+  }
+
+  // edit card clicked
+  function handleEdit(card) {
+    setName(card.name)
+    setEmail(card.email)
+    setMessage(card.message)
+    setID(card.id)
+    setEditBtn(true)
   }
 
   function handleDelete(id) {
@@ -91,7 +111,7 @@ export default function Contact() {
 
         <div>
           <form style={{ width: "50%", border: "2px solid grey", padding: "50px" }}>
-            <h1>Contact Form</h1>
+            <h1>{editBtn ? "Edit Details" : "Contact Form"}</h1>
 
             <FormControl margin="normal" fullWidth>
               <InputLabel htmlFor="name">Name</InputLabel>
@@ -108,8 +128,8 @@ export default function Contact() {
               <Input multiline rows={7} value={message} onChange={(e) => setMessage(e.target.value)} />
             </FormControl>
 
-            <Button variant="contained" color="primary" size="large" endIcon={<SendIcon />} fullWidth onClick={handleSubmit}>
-              Send
+            <Button variant="contained" color="primary" size="large" endIcon={editBtn ? <EditIcon /> : <SendIcon />} fullWidth onClick={handleSubmit}>
+              {editBtn ? "Edit" : "Save"}
             </Button>
           </form>
         </div>
@@ -119,10 +139,10 @@ export default function Contact() {
           <br></br>
           <div style={{ marginTop: "20px", marginBottom: "20px" }}>
             <Container styles={{ padding: "20px 0" }} className={classes.cardGridS} maxWidth="md">
-              <Grid container spacing={2}>
+              <Grid container spacing={3}>
                 {comments.map((card) => (
                   <Grid item key={card.id} xs={12} sm={6} md={3}>
-                    <Card className={classes.card} onClick={() => console.log("Clicked")}>
+                    <Card className={classes.card} onClick={() => handleEdit(card)}>
                       <div style={{ backgroundColor: "#FFF" }}>
                         <CardContent className={classes.cardContent}>
                           <Typography gutterBottom variant='h5' className={classes.multiLineEllipsis2}>

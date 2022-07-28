@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
 import "./App.css";
-
 import { Route, Routes } from "react-router-dom";
 import CartContainer from "./components/CartContainer";
 import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Error from "./components/Error";
 import Home from "./components/Home";
-
 import { CssBaseline } from "@mui/material";
 import AddProducts from "./components/AddProducts";
 
