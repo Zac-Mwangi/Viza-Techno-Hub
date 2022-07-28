@@ -1,6 +1,6 @@
 import React from 'react'
 import useStyles from '../styles'
-import { Typography, Button, Grid, Container} from '@mui/material'
+import { Typography, Button, Grid, Container } from '@mui/material'
 
 import SearchBar from 'material-ui-search-bar';
 import AddIcon from '@mui/icons-material/Add';
@@ -9,7 +9,7 @@ import { NavLink } from 'react-router-dom'
 
 
 
-export default function Header({setProducts, nM, addProduct}) {
+export default function Header({ setProducts, nM, addProduct }) {
     const classes = useStyles()
 
     function changeText(filterBy) {
@@ -32,7 +32,7 @@ export default function Header({setProducts, nM, addProduct}) {
             <div className={classes.container}>
                 <Container maxWidth="sm">
                     <Typography variant='h2' align='center' color='textPrimary' gutterBottom>
-                        Viza Techno Hub
+                        Viza Store
                     </Typography>
 
                     <Typography variant='h5' align='center' color='textSecondary' paragraph>

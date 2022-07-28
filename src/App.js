@@ -16,7 +16,14 @@ export default function App() {
   const [cartLength, setCartLength] = useState(0);
   const [cart, setCart] = useState([]);
 
+  // product
+  const [products, setProducts] = useState([]);
+  const [nM, setNM] = useState([]);
+
+  //
+
   const url = "http://localhost:3000/cart";
+  // const url = "http://localhost:3000/cart";
 
   // useEffect To Fetch All the cart
   useEffect(() => {
@@ -41,7 +48,19 @@ export default function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/add" element={<AddProducts />} />
         <Route path="/cart" element={<CartContainer cart={cart} />} />
-        <Route path="/" element={<Home update={update} cart={cart} />} />
+        <Route
+          path="/"
+          element={
+            <Home
+              update={update}
+              cart={cart}
+              products={products}
+              setProducts={setProducts}
+              nM={nM}
+              setNM={setNM}
+            />
+          }
+        />
         <Route path="*" element={<Error />} />
       </Routes>
     </div>
