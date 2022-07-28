@@ -3,6 +3,8 @@ import useStyles from '../styles'
 import { Typography, Button, Grid, Container, Box, TextField } from '@mui/material'
 
 import SearchBar from 'material-ui-search-bar';
+import AddIcon from '@mui/icons-material/Add';
+
 
 export default function Header({ products, updateList, setProducts, nM, setNM }) {
     const classes = useStyles()
@@ -76,6 +78,11 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                             <Grid item>
                                 <Button variant='outlined' color='primary' onClick={() => changeText("beauty")}>
                                     BEAUTY
+                                </Button>
+                            </Grid>
+                            <Grid item>
+                                <Button variant="contained" endIcon={<AddIcon />} onClick={()=>console.log("olaa")}>
+                                    ADD NEW 
                                 </Button>
                             </Grid>
                         </Grid>
