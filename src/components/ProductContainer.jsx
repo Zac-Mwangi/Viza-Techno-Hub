@@ -61,8 +61,8 @@ export default function ProductContainer({ cards, update, cart }) {
 
     }
     return (
-        <div>
-            <Container styles={{ padding: "20px 0" }} className={classes.cardGridS} maxWidth="md">
+        <div style={{marginTop: "20px" , marginBottom:"20px"}}>
+            <Container styles={{ padding: "20px 0"}} className={classes.cardGridS} maxWidth="md">
                 <Grid container spacing={4}>
                     {cards.map((card) => (
                         <Grid item key={card.id} xs={12} sm={6} md={4} onClick={() => alert(card.title + "olaa")}>
@@ -89,7 +89,7 @@ export default function ProductContainer({ cards, update, cart }) {
                                         </Box>
                                         <div style={{ display: "flex" }}>
                                             <Typography variant='h6' sx={{ flexGrow: 1 }}>
-                                                ${card.price}
+                                                Ksh.{card.price}
                                             </Typography>
                                             <IconButton color="primary" aria-label="add to shopping cart"
                                                 onClick={(e) => handleSubmit(e, card)}>

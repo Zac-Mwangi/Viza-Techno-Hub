@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Contact from './Contact'
+import Footer from './Footer'
 import Header from './Header'
 import ProductContainer from './ProductContainer'
 
@@ -27,7 +27,7 @@ export default function Home({ update , cart }) {
         <div>
             <Header products={products} updateList={updateList} setProducts={setProducts} nM={nM} setNM={setNM} />
             <ProductContainer cards={products} update={update} cart = {cart} />
-            <Contact />
+            <Footer />
         </div >
     )
 }

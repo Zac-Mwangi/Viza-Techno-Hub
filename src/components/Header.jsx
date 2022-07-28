@@ -4,8 +4,6 @@ import { Typography, Button, Grid, Container, Box, TextField } from '@mui/materi
 
 import SearchBar from 'material-ui-search-bar';
 
-
-
 export default function Header({ products, updateList, setProducts, nM, setNM }) {
     const classes = useStyles()
 
@@ -23,7 +21,7 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
     }
 
     function searchFunction(searchValue) {
-        const itemsSearch =  nM.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
+        const itemsSearch = nM.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()));
         setProducts(itemsSearch)
     }
     return (
@@ -61,8 +59,8 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant='contained' color='primary' onClick={() => changeText("jeweller")}>
-                                    JEWELLERS
+                                <Button variant='contained' color='primary' onClick={() => changeText("sporting")}>
+                                    SPORTING
                                 </Button>
                             </Grid>
                             <Grid item>
@@ -76,8 +74,8 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant='outlined' color='primary' onClick={() => changeText("others")}>
-                                    OTHERS
+                                <Button variant='outlined' color='primary' onClick={() => changeText("beauty")}>
+                                    BEAUTY
                                 </Button>
                             </Grid>
                         </Grid>
@@ -86,10 +84,7 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 placeholder="Search Product ..."
                             ></SearchBar>
                         </div>
-
                     </div>
-
-
                 </Container>
             </div>
 

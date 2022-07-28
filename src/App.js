@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "./components/NavBar";
-import Footer from "./components/Footer";
 import "./App.css";
 
 import { Route, Routes } from "react-router-dom";
@@ -9,6 +8,8 @@ import Contact from "./components/Contact";
 import Login from "./components/Login";
 import Error from "./components/Error";
 import Home from "./components/Home";
+
+import { CssBaseline } from "@mui/material";
 
 export default function App() {
   const [cartLength, setCartLength] = useState(0);
@@ -32,15 +33,15 @@ export default function App() {
 
   return (
     <div>
+      <CssBaseline />
       <NavBar cartLength={cartLength} />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/cart" element={<CartContainer cart={cart}/>} />
-        <Route path="/" element={<Home update={update} cart = {cart} />} />
+        <Route path="/cart" element={<CartContainer cart={cart} />} />
+        <Route path="/" element={<Home update={update} cart={cart} />} />
         <Route path="*" element={<Error />} />
       </Routes>
-      <Footer />
     </div>
   );
 }
