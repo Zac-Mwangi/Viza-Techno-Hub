@@ -53,8 +53,6 @@ export default function AddProducts() {
                     setImage("")
                 });
         }
-
-        window.location = '/';
     }
 
     return (

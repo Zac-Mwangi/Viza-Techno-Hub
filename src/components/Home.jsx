@@ -3,9 +3,9 @@ import Footer from './Footer'
 import Header from './Header'
 import ProductContainer from './ProductContainer'
 
-export default function Home({ update, cart, products, setProducts, nM, setNM }) {
-    // const [products, setProducts] = useState([]);
-    // const [nM, setNM] = useState([]);
+export default function Home({ update , cart }) {
+    const [products, setProducts] = useState([]);
+    const [nM, setNM] = useState([]);
     const url = "http://localhost:3000/products";
 
     // useEffect To Fetch All the products
@@ -23,15 +23,15 @@ export default function Home({ update, cart, products, setProducts, nM, setNM })
     }
 
     function addProduct(prd) {
-        setProducts([...products, prd])
-        setNM([...nM, prd])
+        setProducts([...products ,  prd])
+        setNM([...nM ,  prd])
     }
 
 
     return (
         <div>
-            <Header setProducts={setProducts} nM={nM} addProduct={addProduct} />
-            <ProductContainer cards={products} update={update} cart={cart} />
+            <Header setProducts={setProducts} nM={nM} addProduct={addProduct}  />
+            <ProductContainer cards={products} update={update} cart = {cart} />
             <Footer />
         </div >
     )
