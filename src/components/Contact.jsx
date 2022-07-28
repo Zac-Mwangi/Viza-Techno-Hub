@@ -45,6 +45,8 @@ export default function Contact() {
 
       // check if its edit or add
       if (editBtn) {
+
+        // edit
         fetch(url + "/" + id, {
           method: "PATCH",
           headers: {
@@ -53,9 +55,11 @@ export default function Contact() {
           body: JSON.stringify(commentData),
         })
           .then((r) => r.json())
-          .then((updatedItem) => console.log(updatedItem));
+          .then((updatedItem) => updateList(updatedItem));
       }
       else {
+
+        // post
         fetch(url, {
           method: "POST",
           headers: {
@@ -82,7 +86,7 @@ export default function Contact() {
     setEmail(card.email)
     setMessage(card.message)
     setID(card.id)
-    setEditBtn(true)
+    setEditBtn(!editBtn)
   }
 
   function handleDelete(id) {
@@ -96,6 +100,21 @@ export default function Contact() {
   function updateAfterDelete(id) {
     const updated = comments.filter((comment) => comment.id !== id);
     setComments(updated);
+  }
+
+  function updateList(updatedItem) {
+    const updatedItems = comments.map((item) => {
+      if (item.id === updatedItem.id) {
+        return updatedItem;
+      } else {
+        return item;
+      }
+    });
+    setComments(updatedItems);
+    setEditBtn(!editBtn)
+    setName("")
+    setEmail("")
+    setMessage("")
   }
 
   return (
