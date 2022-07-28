@@ -1,14 +1,60 @@
-import React from 'react'
-import { FormControl, InputLabel, Input, Button, Select, MenuItem } from "@material-ui/core";
+import React, { useState } from 'react'
+import { FormControl, InputLabel, Input, Button } from "@material-ui/core";
 import AddIcon from '@mui/icons-material/Add';
 
 
 
 export default function AddProducts() {
 
-    function handleSubmit() {
+    const url = "http://localhost:3000/products";
 
+    const [title, setTitle] = useState("")
+    const [price, setPrice] = useState("")
+    const [image, setImage] = useState("")
+    const [description, setDescription] = useState("")
+    const [category, setCategory] = useState("")
+
+    function handleSubmit(e) {
+        e.preventDefault()
+
+        if (title === "" || price === "" || image === "" || description === "" || category === "") {
+            alert("Please fill all the fields")
+        } else {
+
+            const rate = Math.floor(Math.random() * 4.5) + 1
+            const count = Math.floor(Math.random() * 500) + 1
+
+            const newProduct = {
+                title,
+                price,
+                description,
+                category,
+                image,
+                "rating": {
+                    "rate": rate,
+                    "count": count
+                }
+            }
+
+            fetch(url, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(newProduct),
+            })
+                .then((r) => r.json())
+                .then((data) => {
+                    // console.log(data)
+                    setTitle("")
+                    setPrice("")
+                    setDescription("")
+                    setCategory("")
+                    setImage("")
+                });
+        }
     }
+
     return (
         <div>
             <div
@@ -23,23 +69,23 @@ export default function AddProducts() {
                     <h1>ADD PRODUCT FORM</h1>
 
                     <FormControl margin="normal" fullWidth>
-                        <InputLabel htmlFor="name">Title</InputLabel>
-                        <Input type="title" />
+                        <InputLabel htmlFor="title">Title</InputLabel>
+                        <Input type="title" value={title} onChange={(e) => setTitle(e.target.value)} />
                     </FormControl>
 
                     <FormControl margin="normal" fullWidth>
                         <InputLabel htmlFor="price">Price</InputLabel>
-                        <Input type="number" />
+                        <Input type="number" value={price} onChange={(e) => setPrice(e.target.value)} />
                     </FormControl>
 
                     <FormControl margin="normal" fullWidth>
                         <InputLabel htmlFor="image">Image</InputLabel>
-                        <Input type="text" /><br></br>
+                        <Input type="text" value={image} onChange={(e) => setImage(e.target.value)} /><br></br>
                     </FormControl>
 
                     <FormControl fullWidth>
-                        <label for="cars">choose category</label><br></br>
-                        <select name="cat" id="cat" style={{ padding: "15px" }}>
+                        <label htmlFor="category">choose category</label><br></br>
+                        <select name="category" value={category} id="category" style={{ padding: "15px" }} onChange={(e) => setCategory(e.target.value)}>
                             <option value="beauty">Beauty</option>
                             <option value="clothing">Clothing</option>
                             <option value="electronics">Electronics</option>
@@ -52,16 +98,13 @@ export default function AddProducts() {
 
                     <FormControl margin="normal" fullWidth>
                         <InputLabel htmlFor="description">Description</InputLabel>
-                        <Input multiline rows={7} />
+                        <Input multiline rows={7} value={description} onChange={(e) => setDescription(e.target.value)} />
                     </FormControl>
-
-
 
                     <Button variant="contained" color="primary" size="large" endIcon={<AddIcon />} fullWidth onClick={handleSubmit}>
                         ADD
                     </Button>
                 </form>
-
             </div>
         </div>
     )

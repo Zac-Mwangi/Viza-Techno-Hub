@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import useStyles from '../styles'
-import { Typography, Button, Grid, Container, Box, TextField } from '@mui/material'
+import { Typography, Button, Grid, Container} from '@mui/material'
 
 import SearchBar from 'material-ui-search-bar';
 import AddIcon from '@mui/icons-material/Add';
@@ -9,10 +9,8 @@ import { NavLink } from 'react-router-dom'
 
 
 
-export default function Header({ products, updateList, setProducts, nM, setNM }) {
+export default function Header({setProducts, nM, addProduct}) {
     const classes = useStyles()
-
-    const [search, setSearch] = useState([])
 
     function changeText(filterBy) {
         const pp = (nM.filter((product) => {

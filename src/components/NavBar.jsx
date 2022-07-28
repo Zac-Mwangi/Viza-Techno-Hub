@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Typography, AppBar, Button, CssBaseline, Toolbar, Stack, Badge } from '@mui/material'
 import LaptopMacIcon from '@mui/icons-material/LaptopMac';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';

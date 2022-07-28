@@ -239,6 +239,42 @@
         "rate": 3.6,
         "count": 145
       }
+    },
+    {
+      "title": "Gym",
+      "price": "20000",
+      "description": "Perfect for the core",
+      "category": "sporting",
+      "image": "https://images.unsplash.com/photo-1540497077202-7c8a3999166f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "id": 21,
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      }
+    },
+    {
+      "title": "Dam Bells",
+      "price": "40000",
+      "description": "great",
+      "category": "sporting",
+      "image": "https://images.unsplash.com/photo-1570829460005-c840387bb1ca?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjh8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "id": 22,
+      "rating": {
+        "rate": 3.6,
+        "count": 145
+      }
+    },
+    {
+      "title": "Gym",
+      "price": "60000",
+      "description": "ohio",
+      "category": "sporting",
+      "image": "https://images.unsplash.com/photo-1521805103424-d8f8430e8933?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fGd5bXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60",
+      "rating": {
+        "rate": 4,
+        "count": 192
+      },
+      "id": 23
     }
   ],
   "cart": [

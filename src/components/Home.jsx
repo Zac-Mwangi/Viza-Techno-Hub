@@ -22,10 +22,15 @@ export default function Home({ update , cart }) {
         console.log(prd)
     }
 
+    function addProduct(prd) {
+        setProducts([...products ,  prd])
+        setNM([...nM ,  prd])
+    }
+
 
     return (
         <div>
-            <Header products={products} updateList={updateList} setProducts={setProducts} nM={nM} setNM={setNM} />
+            <Header setProducts={setProducts} nM={nM} addProduct={addProduct}  />
             <ProductContainer cards={products} update={update} cart = {cart} />
             <Footer />
         </div >
