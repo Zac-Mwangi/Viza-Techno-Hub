@@ -5,6 +5,9 @@ import { Typography, Button, Grid, Container, Box, TextField } from '@mui/materi
 import SearchBar from 'material-ui-search-bar';
 import AddIcon from '@mui/icons-material/Add';
 
+import { NavLink } from 'react-router-dom'
+
+
 
 export default function Header({ products, updateList, setProducts, nM, setNM }) {
     const classes = useStyles()
@@ -81,8 +84,8 @@ export default function Header({ products, updateList, setProducts, nM, setNM })
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant="contained" endIcon={<AddIcon />} onClick={()=>console.log("olaa")}>
-                                    ADD NEW 
+                                <Button variant="contained" endIcon={<AddIcon />} onClick={() => console.log("olaa")}>
+                                    <NavLink to='/add'>ADD NEW</NavLink>
                                 </Button>
                             </Grid>
                         </Grid>

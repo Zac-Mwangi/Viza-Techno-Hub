@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { FormControl, InputLabel, Input, Button } from "@material-ui/core";
+import SendIcon from '@mui/icons-material/Send';
 
 export default function Contact() {
 
@@ -67,7 +68,7 @@ export default function Contact() {
           <Input multiline rows={7} value={message} onChange={(e) => setMessage(e.target.value)} />
         </FormControl>
 
-        <Button variant="contained" color="primary" size="large" onClick={handleSubmit}>
+        <Button variant="contained" color="primary" size="large" endIcon={<SendIcon />} fullWidth onClick={handleSubmit}>
           Send
         </Button>
       </form>

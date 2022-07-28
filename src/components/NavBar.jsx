@@ -22,11 +22,11 @@ export default function NavBar({ cartLength }) {
                             <NavLink to='/'>Home</NavLink>
                         </Button>
                         <Button color='inherit'>
-                            <NavLink to='/contact'>Contact</NavLink>
+                            <NavLink to='/contact'>Connect</NavLink>
                         </Button>
-                        <Button color='inherit'>
+                        {/* <Button color='inherit'>
                             <NavLink to='/login'>Login</NavLink>
-                        </Button>
+                        </Button> */}
                         <Badge badgeContent={cartLength} color="secondary">
                             <IconButton color="inherit" aria-label="add to shopping cart">
                                 <NavLink to='/cart'> <AddShoppingCartIcon /></NavLink>

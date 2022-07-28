@@ -12,13 +12,9 @@ export default function Footer() {
                     Footer
                 </Typography>
                 <Typography variant='subtitle1' align='center' color='textSecondary'>
+                    @ 2022 Viza Technologies
                 </Typography>
-
             </footer>
-
-
         </>
-
-
     )
 }

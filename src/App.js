@@ -10,6 +10,7 @@ import Error from "./components/Error";
 import Home from "./components/Home";
 
 import { CssBaseline } from "@mui/material";
+import AddProducts from "./components/AddProducts";
 
 export default function App() {
   const [cartLength, setCartLength] = useState(0);
@@ -38,6 +39,7 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/add" element={<AddProducts />} />
         <Route path="/cart" element={<CartContainer cart={cart} />} />
         <Route path="/" element={<Home update={update} cart={cart} />} />
         <Route path="*" element={<Error />} />
