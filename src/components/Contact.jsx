@@ -4,7 +4,7 @@ import SendIcon from '@mui/icons-material/Send';
 
 export default function Contact() {
 
-  const url = "http://localhost:3000/comments";
+  const url = "https://vizahub.herokuapp.com/comments";
 
   const [name, setName] = useState("")
   const [email, setEmail] = useState("")

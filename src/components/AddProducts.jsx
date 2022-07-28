@@ -6,7 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function AddProducts() {
 
-    const url = "http://localhost:3000/products";
+    const url = "https://vizahub.herokuapp.com/products";
 
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")

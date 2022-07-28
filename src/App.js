@@ -16,7 +16,7 @@ export default function App() {
   const [cartLength, setCartLength] = useState(0);
   const [cart, setCart] = useState([]);
 
-  const url = "http://localhost:3000/cart";
+  const url = "https://vizahub.herokuapp.com/cart";
 
   // useEffect To Fetch All the cart
   useEffect(() => {

@@ -12,7 +12,7 @@ export default function ProductContainer({ cards, update, cart }) {
 
     // console.log("productContainer", cart)
 
-    const url = "http://localhost:3000/cart";
+    const url = "https://vizahub.herokuapp.com/cart";
 
 
     let t = true

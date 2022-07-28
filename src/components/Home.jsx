@@ -6,7 +6,7 @@ import ProductContainer from './ProductContainer'
 export default function Home({ update , cart }) {
     const [products, setProducts] = useState([]);
     const [nM, setNM] = useState([]);
-    const url = "http://localhost:3000/products";
+    const url = "https://vizahub.herokuapp.com/products";
 
     // useEffect To Fetch All the products
     useEffect(() => {
