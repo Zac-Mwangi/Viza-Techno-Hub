@@ -4,6 +4,8 @@ export default function CartContainer({ cart }) {
 
   console.log(cart)
   return (
-    <div>cart</div>
+    <div style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+      <h1>THE CART IS COMING SOON...!!</h1>
+    </div>
   )
 }

@@ -3,7 +3,7 @@ import Footer from './Footer'
 import Header from './Header'
 import ProductContainer from './ProductContainer'
 
-export default function Home({ update , cart }) {
+export default function Home({ update, cart }) {
     const [products, setProducts] = useState([]);
     const [nM, setNM] = useState([]);
     const url = "https://vizahub.herokuapp.com/products";
@@ -18,20 +18,15 @@ export default function Home({ update , cart }) {
             });
     }, []);
 
-    function updateList(prd) {
-        console.log(prd)
-    }
-
     function addProduct(prd) {
-        setProducts([...products ,  prd])
-        setNM([...nM ,  prd])
+        setProducts([...products, prd])
+        setNM([...nM, prd])
     }
-
 
     return (
         <div>
-            <Header setProducts={setProducts} nM={nM} addProduct={addProduct}  />
-            <ProductContainer cards={products} update={update} cart = {cart} />
+            <Header setProducts={setProducts} nM={nM} addProduct={addProduct} />
+            <ProductContainer cards={products} update={update} cart={cart} />
             <Footer />
         </div >
     )

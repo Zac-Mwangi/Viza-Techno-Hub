@@ -1,13 +1,9 @@
 import React from 'react'
 import useStyles from '../styles'
 import { Typography, Button, Grid, Container} from '@mui/material'
-
 import SearchBar from 'material-ui-search-bar';
 import AddIcon from '@mui/icons-material/Add';
-
 import { NavLink } from 'react-router-dom'
-
-
 
 export default function Header({setProducts, nM, addProduct}) {
     const classes = useStyles()
@@ -67,7 +63,7 @@ export default function Header({setProducts, nM, addProduct}) {
                                 </Button>
                             </Grid>
                             <Grid item>
-                                <Button variant='outlined' color='primary' onClick={() => changeText("housings")}>
+                                <Button variant='outlined' color='primary' onClick={() => changeText("housing")}>
                                     HOUSING
                                 </Button>
                             </Grid>

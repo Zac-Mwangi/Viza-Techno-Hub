@@ -2,8 +2,6 @@ import React, { useState } from 'react'
 import { FormControl, InputLabel, Input, Button } from "@material-ui/core";
 import AddIcon from '@mui/icons-material/Add';
 
-
-
 export default function AddProducts() {
 
     const url = "https://vizahub.herokuapp.com/products";
@@ -51,7 +49,11 @@ export default function AddProducts() {
                     setDescription("")
                     setCategory("")
                     setImage("")
+
+                    window.location = '/';
                 });
+
+            // window.location = '/';
         }
     }
 
