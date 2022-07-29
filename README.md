@@ -1,70 +1,82 @@
-# Getting Started with Create React App
+# Title
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> > VIZA STORE
 
-## Available Scripts
+# Description
 
-In the project directory, you can run:
+> > With the current generation where everything is acquired online , Viza Store serves the same purpose. Access all available products and amazing prises at the comfort of your place. The Project tends to reduce the hustle of having to go to a physical shop. Its also a great deal to the shop owner who doesn't have to set up physical traditional store with may result to more cost at the same time providing a greater market range
 
-### `npm start`
+# Visuals
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+>> HOME PAGE<img src="./src/screenshots/home.png" alt="contact page"/>
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+>> CONNECT PAGE<img src="./src/screenshots/contact.png" alt="contact page"/>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# 🛠 Skills
 
-### `npm run build`
+> > - React Js , HTML , CSS, Material UI for the front End
+> > - Working with JSON Server for Back-End
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+> > - Add New products
+> > - Update the cart
+> > - Add and edit customer details
+> > - Submit Feedback
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# Setup requirements
 
-### `npm run eject`
+- git (https://git-scm.com/)
+- Web browser of your choice
+- Github (https://github.com/)
+- Node.js (https://nodejs.org/)
+- NPM (https://www.npmjs.com/)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+# Installation
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> > Note that the project requires external dependencies such as material UI
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. You need to clone the project
+   > > Clone the Repository
+2. To install the Node Modules run
+   > > npm install
+3. If the intallation leads to any error run the command with --force as below
+   > > npm install --force
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# GitHub Code
 
-## Learn More
+> > [@Viza-Hub Github Repo](https://github.com/Zac-Mwangi/Viza-Techno-Hub)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# LIve Link
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# Support
 
-### Code Splitting
+> > For any support concerning the project
+> > [@Email](zacharia.mwangi@student.moringaschool.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Contributing
 
-### Analyzing the Bundle Size
+> > Contributions are always welcome!Please adhere to this project's `code of conduct`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Authors
 
-### Making a Progressive Web App
+> > - [@Zac-Mwangi](https://github.com/Zac-Mwangi/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+# Feedback
 
-### Advanced Configuration
+> > If you have any feedback, please reach out to us at [@Email](zacharia.mwangi@student.moringaschool.com)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+# Tech Stack
 
-### Deployment
+> > **Client:** HTML, CSS, ReactJs, Material UI
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+> > **Server:** Json-Server
 
-### `npm run build` fails to minify
+# Project status
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> > No known errors and the project is working fine
+
+# License
+
+> > [MIT](https://choosealicense.com/licenses/mit/)
