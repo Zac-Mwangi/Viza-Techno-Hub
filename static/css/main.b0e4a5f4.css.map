@@ -1,0 +1,1 @@
+{"version":3,"file":"static/css/main.b0e4a5f4.css","mappings":"AAAA,iBACI,UAAY,CACZ,oBACF","sources":["App.css"],"sourcesContent":["a:link , a:visited{\n    color: white;\n    text-decoration: none;\n  }\n/*   \n  a:hover , a:active{\n    background-color: black;\n  } */\n  \n  /* a.active{\n    background-color: black;\n  }  */"],"names":[],"sourceRoot":""}

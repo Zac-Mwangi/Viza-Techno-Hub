@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Viza-Techno-Hub/static/css/main.b0e4a5f4.css",
+    "main.js": "/Viza-Techno-Hub/static/js/main.7d539e57.js",
+    "index.html": "/Viza-Techno-Hub/index.html",
+    "main.b0e4a5f4.css.map": "/Viza-Techno-Hub/static/css/main.b0e4a5f4.css.map",
+    "main.7d539e57.js.map": "/Viza-Techno-Hub/static/js/main.7d539e57.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b0e4a5f4.css",
+    "static/js/main.7d539e57.js"
+  ]
+}
