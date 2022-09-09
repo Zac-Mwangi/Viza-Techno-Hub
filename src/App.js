@@ -14,6 +14,7 @@ export default function App() {
   const [cartLength, setCartLength] = useState(0);
   const [cart, setCart] = useState([]);
 
+  // only part not yet in ruby
   const url = "https://vizahub.herokuapp.com/cart";
 
   // useEffect To Fetch All the cart

@@ -9,7 +9,9 @@ import EditIcon from '@mui/icons-material/Edit';
 export default function Contact() {
 
   const classes = useStyles()
-  const url = "https://vizahub.herokuapp.com/comments";
+  
+  // const url = "https://vizahub.herokuapp.com/comments";
+  const url = "http://localhost:9292/comments";
 
   const [comments, setComments] = useState([]);
   const [name, setName] = useState("")

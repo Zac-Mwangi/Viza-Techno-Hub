@@ -79,7 +79,8 @@ export default function ProductContainer({ cards, update, cart }) {
                                         </Typography>
                                         <Box align="left" mb={1} borderColor="transparent">
                                             <Rating
-                                                value={card.rating.rate}
+                                                value={card.rating}
+                                                // value={card.rating.rate}
                                                 name="rating"
                                             // readOnly="true"
                                             />

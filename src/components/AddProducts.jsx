@@ -4,7 +4,9 @@ import AddIcon from '@mui/icons-material/Add';
 
 export default function AddProducts() {
 
-    const url = "https://vizahub.herokuapp.com/products";
+    // const url = "https://vizahub.herokuapp.com/products";
+    const url = "http://localhost:9292/products";
+
 
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
@@ -20,7 +22,9 @@ export default function AddProducts() {
         } else {
 
             const rate = Math.floor(Math.random() * 4.5) + 1
-            const count = Math.floor(Math.random() * 500) + 1
+            // const count = Math.floor(Math.random() * 500) + 1
+
+
 
             const newProduct = {
                 title,
@@ -28,10 +32,11 @@ export default function AddProducts() {
                 description,
                 category,
                 image,
-                "rating": {
-                    "rate": rate,
-                    "count": count
-                }
+                // "rating": {
+                //     "rate": rate,
+                //     "count": count
+                // }
+                "rating":rate
             }
 
             fetch(url, {
