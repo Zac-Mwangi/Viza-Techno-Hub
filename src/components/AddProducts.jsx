@@ -5,8 +5,8 @@ import AddIcon from '@mui/icons-material/Add';
 export default function AddProducts() {
 
     // const url = "https://vizahub.herokuapp.com/products";
-    const url = "http://localhost:9292/products";
-
+    // const url = "http://localhost:9292/products";
+    const url = "https://vizarubyapi.herokuapp.com/products";
 
     const [title, setTitle] = useState("")
     const [price, setPrice] = useState("")
@@ -30,13 +30,13 @@ export default function AddProducts() {
                 title,
                 price,
                 description,
-                category,
+                "categ": category,
                 image,
                 // "rating": {
                 //     "rate": rate,
                 //     "count": count
                 // }
-                "rating":rate
+                "rating": rate
             }
 
             fetch(url, {

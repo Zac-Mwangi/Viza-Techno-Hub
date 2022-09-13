@@ -8,7 +8,9 @@ export default function Home({ update, cart }) {
     const [products, setProducts] = useState([]);
     const [nM, setNM] = useState([]);
     // const url = "https://vizahub.herokuapp.com/products";
-    const url = "http://localhost:9292/products";
+    // const url = "http://localhost:9292/products";
+    const url = "https://vizarubyapi.herokuapp.com/products";
+
 
     // useEffect To Fetch All the products
     useEffect(() => {

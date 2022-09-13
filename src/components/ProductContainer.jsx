@@ -10,7 +10,8 @@ import { Rating } from '@mui/material';
 export default function ProductContainer({ cards, update, cart }) {
 
     const classes = useStyles()
-    const url = "https://vizahub.herokuapp.com/cart";
+    const url = "http://localhost:9292/products";
+    // const url = "https://vizahub.herokuapp.com/cart";
     let t = true
     
     function handleSubmit(e, card) {
