@@ -13,7 +13,8 @@ export default function Header({ setProducts, nM, addProduct }) {
             if (filterBy === "all") {
                 return true;
             } else {
-                return product.category === filterBy;
+                // return product.category === filterBy;
+                return product.categ === filterBy;
             }
         }));
         setProducts(pp)
@@ -22,7 +23,7 @@ export default function Header({ setProducts, nM, addProduct }) {
     function searchFunction(searchValue) {
         const itemsSearch = nM.filter((item) => item.title.toLowerCase().includes(searchValue.toLowerCase()) ||
             item.description.toLowerCase().includes(searchValue.toLowerCase()) ||
-            item.category.toLowerCase().includes(searchValue.toLowerCase()));
+            item.categ.toLowerCase().includes(searchValue.toLowerCase()));
         setProducts(itemsSearch)
     }
     return (
